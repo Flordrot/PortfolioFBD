@@ -1,5 +1,9 @@
 package com.portfolioFBD.Service;
 
+import com.portfolioFBD.Dto.AdminDto;
+import com.portfolioFBD.Entity.Admin;
+import com.portfolioFBD.Exceptions.AdminNoEncontradoException;
+import com.portfolioFBD.Repository.AdminRepository;
 import java.time.LocalDateTime;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

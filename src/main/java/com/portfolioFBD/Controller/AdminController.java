@@ -1,5 +1,10 @@
 package com.portfolioFBD.Controller;
 
+import com.portfolioFBD.Dto.AdminDto;
+import com.portfolioFBD.Dto.Mensaje;
+import com.portfolioFBD.Entity.Admin;
+import com.portfolioFBD.Service.AdminService;
+import com.portfolioFBD.Exceptions.AdminNoEncontradoException;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -34,7 +39,7 @@ public class AdminController {
         Admin admin;
         try {
           admin = adminService.buscarPorId(id);  
-        } catch (adminNoEncontradoException e) {
+        } catch (AdminNoEncontradoException e) {
            return new ResponseEntity(new Mensaje ("El admin no fue encontrado."), HttpStatus.NOT_FOUND);
         }
      return new ResponseEntity(admin, HttpStatus.OK);
